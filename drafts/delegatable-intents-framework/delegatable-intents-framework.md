@@ -128,13 +128,14 @@ We simply can't express high-fidelity representations of reality (digital or phy
 
 Let's start with the naive example of how me implement our hypothetical synthetics protocol.
 
-![[naive-approach 1.png]]
+<img width="1360" alt="naive-approach" src="https://github.com/delegatable/research/assets/3408362/7a26f494-e98f-4c8b-9e15-82fd6026e647">
+
 
 If we continue to build blockchain protocol like we have been for the last several years, our architecture diagrams might look like the above example. In short, our hypothetical synthetics protocols is taking artificial inputs from external money markets through oracle feeds.
 
 Basically an absolutely terrible, and naive way, to build global and open financial markets, when the alternative is cryptographically verifiable succinct proofs. 
 
-![[succinct-approach.png]]
+<img width="1360" alt="succinct-approach" src="https://github.com/delegatable/research/assets/3408362/a437bc67-f0d9-4a36-a83c-60ff96da3784">
 
 Instead of taking a naive approach to building a synthetics marketplace let's say I want to build an elegant, robust and autonomous Open Finance protocol that will stand the test of time, than I would probably choose to build a protocol that uses cryptographically verifiable elastic discrete time range inputs in the form of succinct zero-knowledge proofs.
 
@@ -173,7 +174,7 @@ Implicit intents are more abstract representations of past and future EVM state 
 ### Explicit Enforcers
 The [Giftee Cards](https://www.giftee.cards/) proof of concept the "TimestampAfterEnforcer" and "TimestampBeforeEnforcer" enforcers are used to limit the dates when a digital cryptocurrency gift card can be used.
 
-![[Pasted image 20230623081036.png]]
+![image](https://github.com/delegatable/research/assets/3408362/891f0701-2773-4d0c-923c-a6fbc4767ae7)
 
 The intents are very explicit.
 
@@ -184,7 +185,7 @@ Examples of other explicit Enforcer modules:
 - [TimestampAfterEnforcer](https://github.com/delegatable/delegatable-sol/blob/main/contracts/enforcers/TimestampAfterEnforcer.sol)
 - [TimestampBeforeEnforcer](https://github.com/delegatable/delegatable-sol/blob/main/contracts/enforcers/TimestampBeforeEnforcer.sol)
 
-![[delegable-explicit-enforcers.png]]
+<img width="2016" alt="delegable-explicit-enforcers" src="https://github.com/delegatable/research/assets/3408362/944d7eb7-4d27-47e7-8268-7653052f300f">
 
 
 ### Implicit Enforcers
@@ -194,4 +195,5 @@ Examples of potential implicit intent modules:
 - Highest Yield Vault Enforcer
 - Multi-Chain Average Price Enforcer
 
-![delegable-implicit-enforcers.png]
+<img width="2016" alt="delegable-implicit-enforcers" src="https://github.com/delegatable/research/assets/3408362/211488c3-c41b-4f3f-b678-b3962346db9c">
+
