@@ -1,17 +1,18 @@
 
 Contents
+
 1. Introduction
-	2. Searching for a Better Tomorrow
-	3. Where We Stand Today
+	1. Searching for a Better Tomorrow
+	2. Where We Stand Today
 2. Defining Intents
 	1. Spectrum of Capabilities
 	2. Explicit Intents
 	3. Implicit Intents
 	4. User Consent
 3. Formalizing Implicit Intents
-	6. EVM State Mutation Snapshots
-	7. Succinct Proofs
-	8. Elastic Discrete Time Range Inputs
+	1. EVM State Mutation Snapshots
+	2. Succinct Proofs
+	3. Elastic Discrete Time Range Inputs
 4. Preparing for the Future
 	1. Delegatable - An Intents Framework
 	2. Explicit Enforcers
