@@ -209,7 +209,6 @@ Let's start with the naive example of how me implement our hypothetical syntheti
 
 <img width="100%" alt="naive-approach" src="https://github.com/delegatable/research/assets/3408362/7a26f494-e98f-4c8b-9e15-82fd6026e647">
 
-
 If we continue to build blockchain protocol like we have been for the last several years, our architecture diagrams might look like the above example. In short, our hypothetical synthetics protocols is taking artificial inputs from external money markets through oracle feeds.
 
 Basically an absolutely terrible, and naive way, to build global and open financial markets, when the alternative is cryptographically verifiable succinct proofs. 
