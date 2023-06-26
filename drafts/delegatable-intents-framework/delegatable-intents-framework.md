@@ -9,11 +9,13 @@ Contents
 	2. Explicit Intents
 	3. Implicit Intents
 	4. User Consent
-3. Formalizing Implicit Intents
+3. Risk Management 
+    1. Unintended Consequences
+4. Formalizing Implicit Intents
 	1. EVM State Mutation Snapshots
 	2. Succinct Proofs
 	3. Elastic Discrete Time Range Inputs
-4. Preparing for the Future
+5. Preparing for the Future
 	1. Delegatable - An Intents Framework
 	2. Explicit Enforcers
 	3. Implicit Enforcers
@@ -121,6 +123,64 @@ Where and what statements tend to implicit
 Core to declarative programming is delegated user consent.
 
 If a computer doesn't have permissions to act on behalf of user's intentions, nothing is possible.
+
+## Second Order Intentions
+
+# Intensions Across Discrete Time Ranges
+
+A simple example of an intention is a token swap. Trade X for Y in a single epoch. The risk is contained, because the intention can be fulfilled and measured in a single block.
+
+But what about more complex intentions?
+
+What if I want to deposit X token in Y vault with the highest yield?
+
+On what time scale do I measure highest yield? 1 day? 4 years? 52 weeks?
+
+Or what if I want change my exposure risk? Split my X token deposit into low/high tranches?
+
+Can that be expressed as an intent? Ideally, right? Or else what's the point of an intents framework, without the expression of intentions that can be executed across discrete time ranges?
+
+What does "discrete time range" mean exactly?
+
+> **Discrete time** views values of variables as occurring at distinct, separate "points in time", or equivalently as being unchanged throughout each non-zero region of time ("time period")—that is, time is viewed as a [discrete variable](https://en.wikipedia.org/wiki/Discrete_variable).
+> 
+>  A **discrete signal** or **discrete-time signal** is a [time series](https://en.wikipedia.org/wiki/Time_series "Time series") consisting of a [sequence](https://en.wikipedia.org/wiki/Sequence "Sequence") of quantities.
+>  
+> Unlike a continuous-time signal, a discrete-time signal is not a function of a continuous argument; however, it may have been obtained by [sampling](https://en.wikipedia.org/wiki/Sampling_(signal_processing) "Sampling (signal processing)") from a continuous-time signal. When a discrete-time signal is obtained by sampling a sequence at uniformly spaced times, it has an associated [sampling rate](https://en.wikipedia.org/wiki/Sampling_rate).
+> 
+> [Discrete time and continuous time - Wikipedia](https://en.wikipedia.org/wiki/Discrete_time_and_continuous_time)
+
+EVM blockchains measure computation in explicit discrete time ranges -- block numbers.  Blocks are uni-directional functional cryptographic operations finalizing roughly every 14-20 human seconds.
+
+If an intention request can be fulfilled in a single block we have bounded risk.
+
+If an intention requires analysis of EVM state mutations across N blocks to optimally satisfy an implicit intent, we are met with the problem of unbounded risk. In other words if we require 2 or more blocks to accurately compute an optimal path for intention execution, we are immediately exposed to second risk risks and **potential failure of intention fulfillment.**
+
+And the only way to minimize unbounded risk boundaries is by defining explicit intentions. 
+
+Let's go back to our original example.
+
+> I want my ETH deposited into the highest earning liquid staking vault, but I don't want my ETH deposited in the largest liquid staking vault. I'm motivated by profit (within reason) and driven by values of decentralization.
+
+The intention is complex, abstract and most likely abused if we don't add explicit conditions.
+
+The intention is complex and abstract because it implies observation across a potentially infinite* range of EVM state mutations storage slots. For starters we need to know which liquid staking derivative protocols to even observe?
+
+We can't possibly measure every single address in the Ethereum account name space, right?
+
+Where do we even tell the computers to start observing and sampling?
+
+Realistically some form of a [token curated registry](https://medium.com/@tokencuratedregistry/a-simple-overview-of-token-curated-registries-84e2b7b19a06) can be used as a general proxy for curation of the top 1-10 liquid staking derivative (LSD) protocols worth sampling and generating discrete time range inputs from. A social layer is arguably the most optimal (lowest cost and highest value) solution for narrowing EVM state observation areas with 99.9 efficiency -- going from a nearly infinite observation range to a much more manageable and finite observation area. Essentially offloading the complexity of formally defining which EVM state mutation storage slots are worth observing via normalized human intuition.
+
+And once the top 10 LSD protocols are identified, the average yield artifacts can be generated -- measuring and normalizing cryptographically verifiable average yield signal artifacts from protocols like Lido and RocketPool via storage proofs. The normalized average yield proofs generated from the individual protocols could than be used as inputs for comparator operations inside of zero-knowledge circuits that generate optimally compressed succinct proofs. The succinct proofs become the boundaries for intentions that have minimal explicit requirements.
+
+## Bounded Risk
+An intention with bounded risk requires a single discrete time range sample size i.e. finalization in a single block sample.
+
+## Unbounded Risk
+An intention with unbounded risk infers N discrete time range sample i.e. intention interoperation occurs multiple block samples.
+
+In the world of blockchains the ideal state is cryptographically verifiable historical EVM state mutations. Everything else is "fabricated state" and conjecture in the land of code as law.
 
 # Formalizing Implicit Intents
 I have no doubt we can solve explicit intent execution in blockchain environments. It's easy to enforce and formally describe "execute this transaction on between this timestamps or if this governance proposal passes."
