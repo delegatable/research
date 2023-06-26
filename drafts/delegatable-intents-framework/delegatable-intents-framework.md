@@ -124,9 +124,7 @@ Core to declarative programming is delegated user consent.
 
 If a computer doesn't have permissions to act on behalf of user's intentions, nothing is possible.
 
-## Second Order Intentions
-
-# Intensions Across Discrete Time Ranges
+# Intents Across Discrete Time Ranges
 
 A simple example of an intention is a token swap. Trade X for Y in a single epoch. The risk is contained, because the intention can be fulfilled and measured in a single block.
 
@@ -154,6 +152,8 @@ EVM blockchains measure computation in explicit discrete time ranges -- block nu
 
 If an intention request can be fulfilled in a single block we have bounded risk.
 
+<img width="100%" alt="simple-intention" src="https://github.com/delegatable/research/assets/3408362/6d41b031-d353-4ad8-a48a-fce2b5bc8ce3">
+
 If an intention requires analysis of EVM state mutations across N blocks to optimally satisfy an implicit intent, we are met with the problem of unbounded risk. In other words if we require 2 or more blocks to accurately compute an optimal path for intention execution, we are immediately exposed to second risk risks and **potential failure of intention fulfillment.**
 
 And the only way to minimize unbounded risk boundaries is by defining explicit intentions. 
@@ -166,11 +166,15 @@ The intention is complex, abstract and most likely abused if we don't add explic
 
 The intention is complex and abstract because it implies observation across a potentially infinite* range of EVM state mutations storage slots. For starters we need to know which liquid staking derivative protocols to even observe?
 
+<img width="100%" alt="complex-intention" src="https://github.com/delegatable/research/assets/3408362/967688da-b81c-4612-ba06-e57f6734d45b">
+
 We can't possibly measure every single address in the Ethereum account name space, right?
 
 Where do we even tell the computers to start observing and sampling?
 
 Realistically some form of a [token curated registry](https://medium.com/@tokencuratedregistry/a-simple-overview-of-token-curated-registries-84e2b7b19a06) can be used as a general proxy for curation of the top 1-10 liquid staking derivative (LSD) protocols worth sampling and generating discrete time range inputs from. A social layer is arguably the most optimal (lowest cost and highest value) solution for narrowing EVM state observation areas with 99.9 efficiency -- going from a nearly infinite observation range to a much more manageable and finite observation area. Essentially offloading the complexity of formally defining which EVM state mutation storage slots are worth observing via normalized human intuition.
+
+![observable-space](https://github.com/delegatable/research/assets/3408362/d1bf55f4-95df-427a-a278-443273d796e3)
 
 And once the top 10 LSD protocols are identified, the average yield artifacts can be generated -- measuring and normalizing cryptographically verifiable average yield signal artifacts from protocols like Lido and RocketPool via storage proofs. The normalized average yield proofs generated from the individual protocols could than be used as inputs for comparator operations inside of zero-knowledge circuits that generate optimally compressed succinct proofs. The succinct proofs become the boundaries for intentions that have minimal explicit requirements.
 
