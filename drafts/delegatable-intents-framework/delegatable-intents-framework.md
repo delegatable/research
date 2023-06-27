@@ -414,10 +414,11 @@ In short we need to reduce long-running EVM state mutations into operator condit
 As recognized by many brilliant minds, the blockchain space is evolving.
 
 > Despite the challenges, achieving scalability, wallet security, and privacy for regular users is crucial for Ethereum's future. It is not just about technical feasibility but about actual accessibility for regular users. We need to rise to meet this challenge.
+> - Vitalik Buterin - [The Three Transitions](https://vitalik.ca/general/2023/06/09/three_transitions.html)
 
-We are moving towards more complex abstractions. Abstractions that will help the Ethereum and greater Web3 ecosystem scale to millions and billions of users.
+We are moving towards more complex abstractions. Abstractions that will help the Ethereum ecosystem scale to millions and billions of users.
 
-But we're not there yet.
+_But we're not there yet._
 
 We still have to find the patterns that scale technically, is approachable by developers/engineers and works for the average user.
 
